@@ -1,0 +1,16 @@
+#--***************************************************************************************
+#    Title: demo/config/routes/dev/web_profiler.yaml
+#    Author: Symfony
+#    Date: 2020
+#    Code version: 1.5.1
+#    Availability: https://github.com/symfony/demo
+#
+#**************************************************************************************/-->
+
+web_profiler_wdt:
+    resource: '@WebProfilerBundle/Resources/config/routing/wdt.xml'
+    prefix: /_wdt
+
+web_profiler_profiler:
+    resource: '@WebProfilerBundle/Resources/config/routing/profiler.xml'
+    prefix: /_profiler

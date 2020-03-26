@@ -1,0 +1,14 @@
+#--***************************************************************************************
+#    Title: demo/config/routes/annotations.yaml
+#    Author: Symfony
+#    Date: 2020
+#    Code version: 1.5.1
+#    Availability: https://github.com/symfony/demo
+#
+#**************************************************************************************/-->
+
+
+controllers:
+    resource: ../../src/Controller/
+    type: annotation
+

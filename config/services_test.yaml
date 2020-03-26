@@ -1,0 +1,18 @@
+#--***************************************************************************************
+#    Title: Verify Phone Numbers in Symfony 4 PHP with Authy and Twilio SMS
+#    Author: Oluyemi Olususi
+#    Date: 29-05-2019
+#    Code version: 1
+#    Availability: https://www.twilio.com/blog/verify-phone-numbers-in-symfony-4-php-with-authy-and-twilio-sms
+#
+#**************************************************************************************/-->
+
+services:
+    _defaults:
+        public: true
+
+    # If you need to access services in a test, create an alias
+    # and then fetch that alias from the container. As a convention,
+    # aliases are prefixed with test. For example:
+    #
+    # test.App\Service\MyService: '@App\Service\MyService'
