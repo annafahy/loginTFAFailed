@@ -13,6 +13,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            
 #            pattern: ^/
             anonymous: ~
 #            http_basic: ~
@@ -24,10 +25,13 @@ security:
             # http_basic: true
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
-            form_login:
-                  login_path: login
-                  check_path: login
-                  default_target_path: /home
+            #form_login:
+                #  login_path: login
+                #  check_path: login
+                # default_target_path: /home
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
 #        secured_area:
 #            anonymous: ~
             
@@ -39,4 +43,6 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/home, roles: ROLE_USER }
+         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        
         

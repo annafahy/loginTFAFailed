@@ -23,4 +23,11 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/index.html.twig');
     }
+    /**
+     * @Route("/", name="app_login")
+     */
+     public function app()
+     {
+         return $this->render('home/index.html.twig');
+     }
 }

@@ -7,12 +7,13 @@
 #
 #**************************************************************************************-->
 
-
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+app_login:
+    path: /homepage
+    controller: App\Controller\DefaultController::app
 logout:
     path: /logout
+
+
 
   
 

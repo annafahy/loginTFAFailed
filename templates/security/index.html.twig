@@ -19,7 +19,7 @@
 
             <h2 class="text-center">Secure Login</h2>
             <hr>
-
+    <form method="post">
             {% if error %}
                 <div class="alert alert-danger alert-dismissible">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -34,7 +34,7 @@
                 </div>
             {% endfor %}
 
-            <form action="{{ path('login') }}" method="post">
+           {# <form action="{{ path('login') }}" method="post">#}
 
                 <div class="row">
                     <div class="form-group col-md-12">
@@ -49,6 +49,7 @@
                         <input type="password" id="password" class="form-control" name="_password" />
                     </div>
                 </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
 
                 <div class="row">
                     <div class="form-group col-md-12">
@@ -59,9 +60,9 @@
                     <div class="text-center form-group">
                         Don't have an account? <span><a href="{{ path('user_registration') }}">Register</a></span>
                     </div>
-            </form>
+           {# </form>#}
         </div>
 
     </div>
-
+</form>
 {% endblock %}
