@@ -12,6 +12,9 @@ app_login:
     controller: App\Controller\DefaultController::app
 logout:
     path: /logout
+send:
+    path: /send
+    controller: App\Controller\SecurityController::sendSms
 
 
 
