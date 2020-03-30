@@ -17,7 +17,7 @@
 
     <div class="col-sm-12 wrapper">
         <div class="auth-form" style="max-width: 600px;margin: 0 auto;">
-            <h2 class="text-center">Register</h2>
+            <h2 class="heading">Register</h2>
             <hr>
             <form action="{{ url('register') }}" method="post">
             <input type="hidden" name="userid" value="<?php echo $user; ?>" />
@@ -58,7 +58,7 @@
                 </div>
             </form>
 
-            <div class="text-center">
+            <div class="registerLogin">
                 Have an account <span><a href="{{ path('login') }}">Login</a></span>
             </div>
         </div>

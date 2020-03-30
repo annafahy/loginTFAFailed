@@ -15,6 +15,15 @@ logout:
 send:
     path: /send
     controller: App\Controller\SecurityController::sendSms
+verify_code2:
+    path: /verify/code2
+    controller: App\Controller\SecurityController::verifyCode2
+verify_page2:
+    path: /verify/page2
+    controller: App\Controller\DefaultController::verifyPage2
+
+
+
 
 
 

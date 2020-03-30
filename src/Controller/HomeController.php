@@ -43,7 +43,6 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
-
     /**
      * @Route("/verify/page", name="verify_page")
      */
@@ -101,4 +100,5 @@ class HomeController extends AbstractController
         $this->entityManager->persist($user);
         $this->entityManager->flush();
     }
+
 }

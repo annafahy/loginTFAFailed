@@ -30,4 +30,11 @@ class DefaultController extends AbstractController
      {
          return $this->render('home/index.html.twig');
      }
+     /**
+     * @Route("/", name="verify_page2")
+     */
+     public function verifyPage2()
+     {
+         return $this->render('home/verify2.html.twig');
+     }
 }

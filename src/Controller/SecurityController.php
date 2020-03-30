@@ -17,6 +17,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
 use App\Form\UserType;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
 class SecurityController extends AbstractController
@@ -91,15 +92,42 @@ class SecurityController extends AbstractController
                'password' => $password,
            ];
  
-           $this->get('session')->set('user', $user_params);
+           $this->get('session')->set('user2', $user_params);
         }
         
     }
-    return $this->redirectToRoute('verify_page');
+    return $this->redirectToRoute('verify_page2');
 }
-    function updateDatabase($object)
+function updateDatabase($object)
 {
     $this->entityManager->persist($object);
     $this->entityManager->flush();
 }
+    /**
+     * @Route("/verify/code2", name="verify_code2")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+     public function verifyCode2(Request $request, UserPasswordEncoderInterface $encoder)
+     {
+         try {
+             // Get data from session
+                        $data = $this->get('session')->get('user2');
+           
+            $authy_api    = new \Authy\AuthyApi( getenv('TWILIO_AUTHY_API_KEY') );
+            $verification = $authy_api->verifyToken( $data['authy_id'], $request->query->get('verify_code') );
+
+ 
+            return $this->redirectToRoute('home');
+
+         } catch (\Exception $exception) {
+             $this->addFlash(
+                 'error',
+                 'Verification code is incorrect'
+             );
+             return $this->redirectToRoute('verify_page2');
+         }
+     }
+     
+  
 }
