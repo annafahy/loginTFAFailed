@@ -21,6 +21,9 @@ verify_code2:
 verify_page2:
     path: /verify/page2
     controller: App\Controller\DefaultController::verifyPage2
+loginVerify:
+    path: /
+    controller: App\Controller\SecurityController::loginVerify
 
 
 

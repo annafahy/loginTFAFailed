@@ -54,6 +54,14 @@ class SecurityController extends AbstractController
         ]);
     }
     /**
+     * @Route("/", name="loginVerify")
+     */
+     public function loginVerify()
+     {
+        return $this->render('home/verify2.html.twig');
+     }
+
+    /**
      * @Route("/", name="send")
      */
     public function sendSms(Request $request)
