@@ -19,14 +19,17 @@
                 <a class="navbar-brand"  href="{{ path('default') }}"> Two Factor Authentication </a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                {% if (app.user) and (not app.request.get('_route') == 'verify_page2') %}
+                {% if (app.user) and (app.request.get('_route') != 'verify_page2') %}
                     <li><a class="nav-link" href="{{ path('home') }}">Dashboard</a></li>
                     <li><a class="nav-link" href="{{ path('logout') }}">Logout</a></li>
-              
+            
                 {% else %}
                     <li><a class="nav-link" href="{{ path('login') }}">Login</a></li>
                     <li><a class="nav-link" href="{{ path('user_registration') }}">Register</a></li>
                 {% endif %}
+               
+                
+                
                 
                 
             </ul>
